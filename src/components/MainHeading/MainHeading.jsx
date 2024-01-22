@@ -3,9 +3,8 @@ import * as Styled from './styled';
 
 class MainHeading extends Component {
   render() {
-    return (
-      <Styled.MainHeadingStyled>{this.props.children}</Styled.MainHeadingStyled>
-    );
+    const { children } = this.props;
+    return <Styled.MainHeadingStyled>{children}</Styled.MainHeadingStyled>;
   }
 }
 

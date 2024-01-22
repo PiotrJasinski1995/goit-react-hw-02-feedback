@@ -21,26 +21,28 @@ class Statistics extends Component {
   };
 
   render() {
+    const { good, neutral, bad, total, positivePercentage } = this.props;
+
     return (
       <>
-        {this.props.total === 0 ? (
+        {total === 0 ? (
           <Notification message="There is no feedback" />
         ) : (
           <ul>
             <li>
-              <p>Good: {this.props.good}</p>
+              <p>Good: {good}</p>
             </li>
             <li>
-              <p>Neutral: {this.props.neutral}</p>
+              <p>Neutral: {neutral}</p>
             </li>
             <li>
-              <p>Bad: {this.props.bad}</p>
+              <p>Bad: {bad}</p>
             </li>
             <li>
-              <p>Total: {this.props.total}</p>
+              <p>Total: {total}</p>
             </li>
             <li>
-              <p>Positive feedback: {this.props.positivePercentage}%</p>
+              <p>Positive feedback: {positivePercentage}%</p>
             </li>
           </ul>
         )}

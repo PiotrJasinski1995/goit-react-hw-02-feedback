@@ -9,11 +9,12 @@ class FeedbackOptions extends Component {
   };
 
   render() {
+    const { options, onLeaveFeedback } = this.props;
     return (
       <Styled.FeedbackOptionsListStyled>
-        {this.props.options.map(option => (
+        {options.map(option => (
           <li key={option}>
-            <button onClick={this.props.onLeaveFeedback}>
+            <button onClick={onLeaveFeedback}>
               {option.charAt(0).toUpperCase() + option.slice(1)}
             </button>
           </li>

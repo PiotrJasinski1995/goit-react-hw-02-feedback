@@ -12,40 +12,48 @@ class App extends Component {
   };
 
   updateFeedback = event => {
+    const actualState = this.state;
     const buttonText = event.target.innerHTML;
 
     this.setState({
-      [buttonText.toLowerCase()]: this.state[buttonText.toLowerCase()] + 1,
+      [buttonText.toLowerCase()]: actualState[buttonText.toLowerCase()] + 1,
     });
   };
 
-  countTotalFeedback = () =>
-    this.state.good + this.state.neutral + this.state.bad;
+  countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+
+    return good + neutral + bad;
+  };
 
   countPositiveFeedbackPercentage = () => {
+    const { good } = this.state;
     const totalCount = this.countTotalFeedback();
+
     if (totalCount > 0) {
-      return Math.floor((this.state.good / totalCount) * 100);
+      return Math.floor((good / totalCount) * 100);
     }
 
     return 0;
   };
 
   render() {
+    const actualState = this.state;
+    const { good, neutral, bad } = actualState;
     return (
       <>
         <MainHeading>Feedback App</MainHeading>
         <Section title="Please leave a feedback">
           <FeedbackOptions
-            options={Object.keys(this.state)}
+            options={Object.keys(actualState)}
             onLeaveFeedback={this.updateFeedback}
           />
         </Section>
         <Section title="Statistics">
           <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
+            good={good}
+            neutral={neutral}
+            bad={bad}
             total={this.countTotalFeedback()}
             positivePercentage={this.countPositiveFeedbackPercentage()}
           />

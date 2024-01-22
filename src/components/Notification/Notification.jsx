@@ -11,7 +11,8 @@ class Notification extends Component {
   };
 
   render() {
-    return <p>{this.props.message}</p>;
+    const { message } = this.props;
+    return <p>{message}</p>;
   }
 }
 

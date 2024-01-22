@@ -12,10 +12,12 @@ class Section extends Component {
   };
 
   render() {
+    const { title, children } = this.props;
+
     return (
       <Styled.SectionStyled>
-        <h2>{this.props.title}</h2>
-        {this.props.children}
+        <h2>{title}</h2>
+        {children}
       </Styled.SectionStyled>
     );
   }
