@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Section from './Section/Section';
+import MainHeading from './MainHeading/MainHeading';
 
 class App extends Component {
   state = {
@@ -32,7 +33,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
+        <MainHeading>Feedback App</MainHeading>
         <Section title="Please leave a feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -48,7 +50,7 @@ class App extends Component {
             positivePercentage={this.countPositiveFeedbackPercentage()}
           />
         </Section>
-      </div>
+      </>
     );
   }
 }

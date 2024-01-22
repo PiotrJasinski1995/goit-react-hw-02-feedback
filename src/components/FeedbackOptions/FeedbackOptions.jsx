@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import * as Styled from './styled';
 
 class FeedbackOptions extends Component {
   static propTypes = {
@@ -9,7 +10,7 @@ class FeedbackOptions extends Component {
 
   render() {
     return (
-      <ul>
+      <Styled.FeedbackOptionsListStyled>
         {this.props.options.map(option => (
           <li key={option}>
             <button onClick={this.props.onLeaveFeedback}>
@@ -17,7 +18,7 @@ class FeedbackOptions extends Component {
             </button>
           </li>
         ))}
-      </ul>
+      </Styled.FeedbackOptionsListStyled>
     );
   }
 }
