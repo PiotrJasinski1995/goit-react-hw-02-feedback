@@ -14,9 +14,9 @@ class FeedbackOptions extends Component {
       <Styled.FeedbackOptionsListStyled>
         {options.map(option => (
           <li key={option}>
-            <button onClick={onLeaveFeedback}>
-              {option.charAt(0).toUpperCase() + option.slice(1)}
-            </button>
+            <Styled.ButtonStyled onClick={onLeaveFeedback}>
+              {option}
+            </Styled.ButtonStyled>
           </li>
         ))}
       </Styled.FeedbackOptionsListStyled>

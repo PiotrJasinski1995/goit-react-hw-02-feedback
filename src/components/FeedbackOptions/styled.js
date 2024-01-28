@@ -6,3 +6,7 @@ export const FeedbackOptionsListStyled = styled.ul`
   gap: 10px;
   margin: 20px 0;
 `;
+
+export const ButtonStyled = styled.button`
+  text-transform: capitalize;
+`;
